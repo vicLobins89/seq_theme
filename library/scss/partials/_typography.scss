@@ -1,0 +1,32 @@
+/******************************************************************
+Site Name: Honey
+Author: Vic Lobins
+
+Stylesheet: Typography
+
+******************************************************************/
+
+
+/*********************
+TYPEKIT
+*********************/
+
+@import url("https://use.typekit.net/jhw2cze.css");
+
+/*********************
+FONT FACE
+*********************/
+
+// font stacks
+$sans-serif:        "futura-pt", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif:             "Georgia", Cambria, Times New Roman, Times, serif;
+
+p {
+  -ms-word-wrap: break-word;
+  word-break: break-word; //non-standart css for webkit
+  word-wrap: break-word;
+}
+
+strong, b {
+	font-weight: 600;
+}

@@ -952,7 +952,7 @@ hr {
   position: relative;
   font-size: 0;
   margin-bottom: 2.5rem; }
-  .featured-image .page-title {
+  .featured-image .page-title, .featured-image .widget_text {
     position: absolute;
     width: 40%;
     height: 50%;
@@ -963,28 +963,35 @@ hr {
     right: 0;
     left: 20%;
     font-size: 130%; }
-    .featured-image .page-title h1 {
+    .featured-image .page-title h1, .featured-image .widget_text h1 {
       color: #fff;
       font-weight: 600;
       text-transform: uppercase;
       margin: 0; }
-    .featured-image .page-title p {
+    .featured-image .page-title p, .featured-image .widget_text p {
       color: #fff;
       width: 80%;
       margin: 0.5rem 0 1.5rem;
       font-size: 1.35rem; }
-    .featured-image .page-title a {
+    .featured-image .page-title a, .featured-image .widget_text a {
       -webkit-box-shadow: 4px 4px 14px 0px rgba(0, 0, 0, 0.4);
       -moz-box-shadow: 4px 4px 14px 0px rgba(0, 0, 0, 0.4);
       box-shadow: 4px 4px 14px 0px rgba(0, 0, 0, 0.4); }
-    .page-home-page .featured-image .page-title {
+    .page-home-page .featured-image .page-title, .page-home-page .featured-image .widget_text {
       height: 43%;
       left: 45%; }
-    .page-about-us .featured-image .page-title {
+    .page-about-us .featured-image .page-title, .page-about-us .featured-image .widget_text {
       text-shadow: 5px 1px 14px rgba(0, 0, 0, 0.9); }
   .featured-image img {
     width: 100%;
     height: auto; }
+  .featured-image .widget_media_image {
+    padding: 0;
+    margin: 0; }
+  .featured-image .widget_text {
+    padding: 0; }
+    .archive .featured-image .widget_text {
+      display: none; }
 
 .row {
   font-size: 0; }
@@ -1087,8 +1094,12 @@ hr {
   max-width: 100%;
   margin-bottom: 1.2rem; }
 
+.blog .team-carousel, .archive .team-carousel, .archive .team-carousel {
+  margin-bottom: 2.5rem; }
 .team-carousel .carousel-item {
   padding: 2.5rem 3.5rem 0; }
+  .blog .team-carousel .carousel-item, .archive .team-carousel .carousel-item, .archive .team-carousel .carousel-item {
+    padding: 2.5rem 1.5rem 0; }
 
 .releases h2 {
   text-align: center;
@@ -1112,8 +1123,53 @@ WORDPRESS BODY CLASSES
 ********************/
 /* for sites that are read right to left (i.e. hebrew) */
 /* home page */
-/* blog template page */
-/* archive page */
+.blog .entry-title, .archive .entry-title {
+  line-height: 1;
+  font-size: 1rem;
+  height: 2rem;
+  margin-top: 0.5em; }
+  .blog .entry-title a, .archive .entry-title a {
+    color: #333333;
+    font-size: 1.3rem; }
+    .blog .entry-title a:hover, .archive .entry-title a:hover, .blog .entry-title a:focus, .archive .entry-title a:focus {
+      color: #666666; }
+.blog .posts-main .col-4, .archive .posts-main .col-4 {
+  padding: 1.5rem; }
+.blog .posts-main p, .archive .posts-main p {
+  margin: 0;
+  font-size: 0.9rem;
+  height: 2.5rem; }
+.blog .posts-main img, .archive .posts-main img {
+  max-width: 100%; }
+.blog .image-thumb, .archive .image-thumb {
+  display: block; }
+
+.cat-filter {
+  margin-left: 1.5rem; }
+  .cat-filter ul, .cat-filter li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-weight: 400;
+    font-size: 1rem;
+    text-transform: uppercase; }
+  .cat-filter > li {
+    color: #000;
+    font-size: 1.25rem; }
+  .cat-filter ul {
+    margin-left: 1.85rem; }
+    .cat-filter ul li {
+      margin-right: 1.5rem; }
+      .cat-filter ul li a {
+        text-decoration: none;
+        color: #333333; }
+        .cat-filter ul li a:hover, .cat-filter ul li a:focus {
+          color: #666666; }
+      .cat-filter ul li.current-cat a {
+        color: #000;
+        text-decoration: underline; }
+
 /* date archive page */
 /* replace the number to the corresponding page number */
 /* search page */
@@ -1275,7 +1331,7 @@ nav li.current-menu-item a, nav li.current_page_item a, nav li.current_page_ance
 POSTS & CONTENT STYLES
 *********************/
 .hentry header {
-  padding: 1.5em; }
+  padding: .5rem 2rem 0; }
 .hentry footer {
   padding: 1.5em; }
   .hentry footer p {
@@ -1283,7 +1339,6 @@ POSTS & CONTENT STYLES
 
 /* end .hentry */
 .single-title,
-.page-title,
 .entry-title {
   margin: 0; }
 
@@ -1298,9 +1353,31 @@ POSTS & CONTENT STYLES
 /* style by tag (i.e. tag-news) */
 /* post meta */
 .byline {
-  color: #ccc;
-  font-style: italic;
+  color: #333333;
+  font-weight: 400;
   margin: 0; }
+
+.share-this {
+  margin: 2rem 0 0.5rem; }
+  .share-this a {
+    background: #000;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    text-align: center;
+    margin-right: 4px;
+    padding: 10px 0; }
+    .share-this a.facebook {
+      background: #3b5998; }
+    .share-this a.twitter {
+      background: #00aced; }
+    .share-this a.google-plus {
+      background: #dd4b39; }
+    .share-this a.linked-in {
+      background: #007bb6; }
+    .share-this a i {
+      color: #fff;
+      font-size: 20px; }
 
 /* entry content */
 .entry-content {
@@ -1386,7 +1463,12 @@ POSTS & CONTENT STYLES
 /* end .gallery */
 /* gallery caption styles */
 .tags {
-  margin: 0; }
+  margin: 0;
+  color: #000;
+  font-weight: 400; }
+  .tags a {
+    color: #666666;
+    text-decoration: none; }
 
 /******************************************************************
 PAGE NAVI STYLES
@@ -1411,6 +1493,8 @@ PAGE NAVI STYLES
     display: inline;
     overflow: hidden;
     border-right: 1px solid #8b8b8a; }
+    .pagination li:last-child {
+      border: none; }
   .pagination a, .pagination span {
     margin: 0;
     text-decoration: none;
@@ -1421,16 +1505,14 @@ PAGE NAVI STYLES
     padding: 0.75em;
     min-width: 1em;
     display: block;
-    color: #0194dd; }
+    color: #0b6b4e; }
     .pagination a:hover, .pagination a:focus, .pagination span:hover, .pagination span:focus {
-      background-color: #0194dd;
+      background-color: #0b6b4e;
       color: #fff; }
   .pagination .current {
     cursor: default;
-    color: #000; }
-    .pagination .current:hover, .pagination .current:focus {
-      background-color: #fff;
-      color: #000; }
+    color: #fff;
+    background-color: #0b6b4e; }
 
 /* end .bones_page_navi */
 /* fallback previous & next links */
@@ -1445,9 +1527,10 @@ COMMENT STYLES
 ******************************************************************/
 /* h3 comment title */
 #comments-title {
-  padding: 0.75em;
-  margin: 0;
-  border-top: 1px solid #dcdcdc;
+  padding: 0 0.5rem;
+  margin: 1.5rem 0 0;
+  line-height: 1.3;
+  border-bottom: 1px solid #bad3ca;
   /* number of comments span */ }
 
 .commentlist {
@@ -1458,7 +1541,7 @@ COMMENT STYLES
   position: relative;
   clear: both;
   overflow: hidden;
-  padding: 1.5em;
+  padding: 1.5rem 10px;
   border-bottom: 1px solid #dcdcdc;
   /* vcard */
   /* end .commentlist .vcard */
@@ -1477,14 +1560,13 @@ COMMENT STYLES
       font-size: 0.9em;
       font-style: italic; }
       .comment .vcard time a {
-        color: #ccc;
+        color: #666666;
         text-decoration: none; }
         .comment .vcard time a:hover {
           text-decoration: underline; }
     .comment .vcard .avatar {
       position: absolute;
-      left: 16px;
-      border-radius: 50%; }
+      left: 10px; }
   .comment:last-child {
     margin-bottom: 0; }
   .comment .children {
@@ -1500,10 +1582,6 @@ COMMENT STYLES
     margin-top: 0;
     margin-left: 7px;
     padding: 7px; }
-  .comment.odd {
-    background-color: #fff; }
-  .comment.even {
-    background: #dcdcdc; }
 
 /* comment meta */
 /* comment content */
@@ -1530,8 +1608,7 @@ COMMENT STYLES
 COMMENT FORM STYLES
 ******************************************************************/
 .comment-respond {
-  padding: 1.5em;
-  border-top: 1px solid #dcdcdc; }
+  padding: 1.5em; }
 
 #reply-title {
   margin: 0; }
@@ -1553,8 +1630,7 @@ COMMENT FORM STYLES
 
 /* comment submit button */
 #submit {
-  float: right;
-  font-size: 1em; }
+  float: right; }
 
 /* comment form title */
 #comment-form-title {

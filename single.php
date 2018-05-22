@@ -26,10 +26,28 @@
 								   /* the time the post was published */
 								   '<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
 								   /* the author of the post */
-								   '<span class="by">'.__( 'by', 'bonestheme' ).'</span> <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author_link( get_the_author_meta( 'ID' ) ) . '</span>'
+								   '<span class="by">'.__( 'by', 'bonestheme' ).'</span> <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author_meta( 'display_name' ) . '</span>'
 								); ?>
 
 							  </p>
+								
+								<div class="share-this">
+									<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink(); ?>" target="_blank" class="facebook">
+										<i class="fab fa-facebook-f"></i>
+									</a>
+									
+									<a href="https://twitter.com/home?status=<?php echo get_permalink(); ?>" target="_blank" class="twitter">
+										<i class="fab fa-twitter"></i>
+									</a>
+									
+									<a href="https://plus.google.com/share?url=<?php echo get_permalink(); ?>" target="_blank" class="google-plus">
+										<i class="fab fa-google-plus-g"></i>
+									</a>
+									
+									<a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo get_permalink(); ?>&title=<?php the_title(); ?>&summary=&source=" target="_blank" class="linked-in">
+										<i class="fab fa-linkedin-in"></i>
+									</a>
+								</div>
 
 							</header> <?php // end article header ?>
 
@@ -38,18 +56,20 @@
 								the_content();
 							  ?>
 							</section> <?php // end article section ?>
+								
+							<hr>
 
 							<footer class="article-footer">
 
-							  <?php printf( __( 'filed under', 'bonestheme' ).': %1$s', get_the_category_list(', ') ); ?>
+								<?php printf( __( '<p class="tags">Categories', '</p>', 'bonestheme' ).': %1$s', get_the_category_list(', '), '%2$s' ); ?>
 
-							  <?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
+								<?php the_tags( '<p class="tags">' . __( 'Tags:', 'bonestheme' ) . ' ', ', ', '</p>' ); ?>
 
+								<?php comments_template(); ?>
+
+								<?php bones_related_posts(); ?>
+							
 							</footer> <?php // end article footer ?>
-
-							<?php comments_template(); ?>
-								
-							<?php bones_related_posts(); ?>
 
 						  </article> <?php // end article ?>
 

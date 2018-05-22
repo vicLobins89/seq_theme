@@ -103,6 +103,20 @@ hr {
 		width: 100%;
 		height: auto;
 	}
+	
+	.widget_media_image {
+		padding: 0;
+		margin: 0;
+	}
+	
+	.widget_text {
+		@extend .page-title;
+		padding: 0;
+		
+		.archive & {
+			display: none;
+		}
+	}
 }
 
 .row {
@@ -273,8 +287,16 @@ hr {
 .team-carousel {
 	@extend .news-carousel;
 	
+	.blog &, .archive & {
+		margin-bottom: 2.5rem;
+	}
+	
 	.carousel-item {
 		padding: 2.5rem 3.5rem 0;
+		
+		.blog &, .archive & {
+			padding: 2.5rem 1.5rem 0;
+		}
 	}
 }
 
@@ -314,8 +336,90 @@ WORDPRESS BODY CLASSES
 
 .rtl {}                           /* for sites that are read right to left (i.e. hebrew) */
 .home {}                          /* home page */
-.blog {}                          /* blog template page */
-.archive {}                       /* archive page */
+
+.blog {
+	.entry-title {
+		line-height: 1;
+		font-size: 1rem;
+		height: 2rem;
+		margin-top: 0.5em;
+		
+		a {
+			color: lighten($black, 20%);
+			font-size: 1.3rem;
+			
+			&:hover, &:focus {
+				color: lighten($black, 40%);
+			}
+		}
+	}
+	
+	.posts-main {
+		.col-4 {
+			padding: 1.5rem;
+		}
+		
+		p {
+			margin: 0;
+    		font-size: 0.9rem;
+			height: 2.5rem;
+		}
+
+		img {
+			max-width: 100%;
+		}
+	}
+	
+	.image-thumb {
+		display: block;
+	}
+}
+
+.cat-filter {
+	margin-left: 1.5rem;
+	
+	ul, li {
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		font-weight: 400;
+		font-size: 1rem;
+		text-transform: uppercase;
+	}
+	
+	> li {
+		color: $black;
+		font-size: 1.25rem;
+	}
+	
+	ul {
+		margin-left: 1.85rem;
+
+		li {
+			margin-right: 1.5rem;
+
+			a {
+				text-decoration: none;
+				color: lighten($black, 20%);
+
+				&:hover, &:focus {
+					color: lighten($black, 40%);
+				}
+			}
+
+			&.current-cat a {
+				color: $black;
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.archive {
+	@extend .blog;
+}
+
 .date {}                          /* date archive page */
 	.date-paged-1 {}                /* replace the number to the corresponding page number */
 .search {}                        /* search page */
@@ -565,232 +669,273 @@ POSTS & CONTENT STYLES
 #content {
 }
 
-		.hentry {
+.hentry {
 
-			header {
-				padding: 1.5em;
-			}
-
-			footer {
-				padding: 1.5em;
-
-				p {
-					margin: 0;
-				}
-			}
-
-		} /* end .hentry */
-
-		.single-title,
-		.page-title,
-		.entry-title {
-			margin: 0;
-		}
-
-		.single-title {}
-
-		.page-title {}
-
-		.entry-title {}
-
-		.archive-title {}
-
-		/* style individual post classes */
-		.post-id {}         /* post by id (i.e. post-3) */
-		.post {}            /* general post style */
-		.page {}            /* general article on a page style */
-		.attachment {}      /* general style on an attatchment */
-		.sticky {}          /* sticky post style */
-		.hentry {}          /* hentry class */
-		.category-slug {}   /* style by category (i.e. category-videos) */
-		.tag-slug {}        /* style by tag (i.e. tag-news) */
-
-		/* post meta */
-		.byline {
-			color: $meta-gray;
-			font-style: italic;
-			margin: 0;
-
-			time {}
-		}
-
-		/* entry content */
-		.entry-content {
-			padding: 1.5rem 2rem 0;
-			
-			h2 {
-				font-weight: 100;
-				font-size: 2.25rem;
-				margin: 1rem 3rem;
-			}
-
-			p {
-				margin: 0 0 1.5em;
-			}
-
-
-			ul, ol, table, dl {}
-
-			ul, ol {
-
-				li {}
-
-			}
-
-			ul {
-
-				li {}
-
-			}
-
-			ol {
-
-				li {}
-
-			}
-
-			table {
-				width: 100%;
-				border: 1px solid $gray;
-				margin-bottom: 1.5em;
-
-				caption {
-					margin: 0 0 7px;
-					font-size: 0.75em;
-					color: $meta-gray;
-					text-transform: uppercase;
-					letter-spacing: 1px;
-				}
-			}
-
-			tr {
-				border-bottom: 1px solid $gray;
-
-				&:nth-child(even) {
-					background-color: $light-gray;
-				}
-			}
-
-			td {
-				padding: 7px;
-				border-right: 1px solid $gray;
-
-				&:last-child {
-					border-right: 0;
-				}
-			}
-
-			th {
-				background-color: $light-gray;
-				border-bottom: 1px solid $gray;
-				border-right: 1px solid $gray;
-
-				&:last-child {
-					border-right: 0;
-				}
-			}
-
-			blockquote {
-				margin: 0 0 1.5em 0.75em;
-				padding: 0 0 0 0.75em;
-				border-left: 3px solid $blue;
-				font-style: italic;
-				color: $meta-gray;
-
-				&:before {}
-
-			}
-
-			dl {}
-
-			dt {}
-
-			dd {
-				margin-left: 0;
-				font-size: 0.9em;
-				color: #787878;
-				margin-bottom: 1.5em;
-			}
-
-			img {
-				margin: 0 0 1.5em 0;
-				max-width: 100%;
-				height: auto;
-			}
-
-			.alignleft, img.alignleft {}
-			.alignright, img.alignright {}
-			.aligncenter, img.aligncenter {}
-
-			.size-auto,
-			.size-full,
-			.size-large,
-			.size-medium,
-			.size-thumbnail {
-				max-width: 100%;
-				height: auto;
-			}
-
-			pre {
-				background: $black;
-				color: $light-gray;
-				font-size: 0.9em;
-				padding: 1.5em;
-				margin: 0 0 1.5em;
-				border-radius: 3px;
-			}
-
-		} /* end .entry-content */
-
-		.wp-caption {
-			max-width: 100%;
-			background: #eee;
-			padding: 5px;
-
-			/* images inside wp-caption */
-			img {
-				max-width: 100%;
-				margin-bottom: 0;
-				width: 100%;
-			}
-
-			p.wp-caption-text {
-				font-size: 0.85em;
-				margin: 4px 0 7px;
-				text-align: center;
-			}
-
-		} /* end .wp-caption */
-
-		/* image gallery styles */
-		.gallery {
-
-			dl {
-
-				a {}
-
-				img {}
-
-			}
-
-			dt {}
-
-			dd {}
-
-		} /* end .gallery */
-
-		/* gallery caption styles */
-		.gallery-caption {}
-
-		.size-full {}
-		.size-large {}
-		.size-medium {}
-		.size-thumbnail {}
-
-	// the tag output
-	.tags {
-		margin: 0;
+	header {
+		padding: .5rem 2rem 0;
 	}
+
+	footer {
+		padding: 1.5em;
+
+		p {
+			margin: 0;
+		}
+	}
+
+} /* end .hentry */
+
+.single-title,
+.entry-title {
+	margin: 0;
+}
+
+.single-title {}
+
+.page-title {}
+
+.entry-title {}
+
+.archive-title {}
+
+/* style individual post classes */
+.post-id {}         /* post by id (i.e. post-3) */
+.post {}            /* general post style */
+.page {}            /* general article on a page style */
+.attachment {}      /* general style on an attatchment */
+.sticky {}          /* sticky post style */
+.hentry {}          /* hentry class */
+.category-slug {}   /* style by category (i.e. category-videos) */
+.tag-slug {}        /* style by tag (i.e. tag-news) */
+
+/* post meta */
+.byline {
+	color: lighten($black, 20%);
+	font-weight: 400;
+	margin: 0;
+
+	time {}
+}
+
+.share-this {
+	margin: 2rem 0 0.5rem;
+	
+	a {
+		background: $black;
+		width: 40px;
+		height: 40px;
+		display: inline-block;
+		text-align: center;
+		margin-right: 4px;
+		padding: 10px 0;
+		
+		&.facebook {
+			background: #3b5998;
+		}
+		
+		&.twitter {
+			background: #00aced;
+		}
+		
+		&.google-plus {
+			background: #dd4b39;
+		}
+		
+		&.linked-in {
+			background: #007bb6;
+		}
+		
+		i {
+			color: $white;
+			font-size: 20px;
+		}
+	}
+}
+
+/* entry content */
+.entry-content {
+	padding: 1.5rem 2rem 0;
+
+	h2 {
+		font-weight: 100;
+		font-size: 2.25rem;
+		margin: 1rem 3rem;
+	}
+
+	p {
+		margin: 0 0 1.5em;
+	}
+
+
+	ul, ol, table, dl {}
+
+	ul, ol {
+
+		li {}
+
+	}
+
+	ul {
+
+		li {}
+
+	}
+
+	ol {
+
+		li {}
+
+	}
+
+	table {
+		width: 100%;
+		border: 1px solid $gray;
+		margin-bottom: 1.5em;
+
+		caption {
+			margin: 0 0 7px;
+			font-size: 0.75em;
+			color: $meta-gray;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+		}
+	}
+
+	tr {
+		border-bottom: 1px solid $gray;
+
+		&:nth-child(even) {
+			background-color: $light-gray;
+		}
+	}
+
+	td {
+		padding: 7px;
+		border-right: 1px solid $gray;
+
+		&:last-child {
+			border-right: 0;
+		}
+	}
+
+	th {
+		background-color: $light-gray;
+		border-bottom: 1px solid $gray;
+		border-right: 1px solid $gray;
+
+		&:last-child {
+			border-right: 0;
+		}
+	}
+
+	blockquote {
+		margin: 0 0 1.5em 0.75em;
+		padding: 0 0 0 0.75em;
+		border-left: 3px solid $blue;
+		font-style: italic;
+		color: $meta-gray;
+
+		&:before {}
+
+	}
+
+	dl {}
+
+	dt {}
+
+	dd {
+		margin-left: 0;
+		font-size: 0.9em;
+		color: #787878;
+		margin-bottom: 1.5em;
+	}
+
+	img {
+		margin: 0 0 1.5em 0;
+		max-width: 100%;
+		height: auto;
+	}
+
+	.alignleft, img.alignleft {}
+	.alignright, img.alignright {}
+	.aligncenter, img.aligncenter {}
+
+	.size-auto,
+	.size-full,
+	.size-large,
+	.size-medium,
+	.size-thumbnail {
+		max-width: 100%;
+		height: auto;
+	}
+
+	pre {
+		background: $black;
+		color: $light-gray;
+		font-size: 0.9em;
+		padding: 1.5em;
+		margin: 0 0 1.5em;
+		border-radius: 3px;
+	}
+
+} /* end .entry-content */
+
+.wp-caption {
+	max-width: 100%;
+	background: #eee;
+	padding: 5px;
+
+	/* images inside wp-caption */
+	img {
+		max-width: 100%;
+		margin-bottom: 0;
+		width: 100%;
+	}
+
+	p.wp-caption-text {
+		font-size: 0.85em;
+		margin: 4px 0 7px;
+		text-align: center;
+	}
+
+} /* end .wp-caption */
+
+/* image gallery styles */
+.gallery {
+
+	dl {
+
+		a {}
+
+		img {}
+
+	}
+
+	dt {}
+
+	dd {}
+
+} /* end .gallery */
+
+/* gallery caption styles */
+.gallery-caption {}
+
+.size-full {}
+.size-large {}
+.size-medium {}
+.size-thumbnail {}
+
+// the tag output
+.tags {
+	margin: 0;
+	color: $black;
+	font-weight: 400;
+	
+	a {
+		color: lighten($black, 40%);
+		text-decoration: none;
+	}
+}
 
 /******************************************************************
 PAGE NAVI STYLES
@@ -819,6 +964,10 @@ PAGE NAVI STYLES
       display: inline;
       overflow: hidden;
       border-right: 1px solid $gray;
+		
+		&:last-child {
+			border: none;
+		}
     }
 
     a, span {
@@ -831,22 +980,18 @@ PAGE NAVI STYLES
       padding: 0.75em;
       min-width: 1em;
       display: block;
-      color: $blue;
+      color: $green;
 
       &:hover, &:focus {
-      	background-color: $blue;
+      	background-color: $green;
       	color: $white;
       }
     }
 
     .current{
     	cursor: default;
-    	color: $text-color;
-
-    	&:hover, &:focus {
-    		background-color: $white;
-    		color: $text-color;
-    	}
+    	color: $white;
+		background-color: $green;
     }
 
   } /* end .bones_page_navi */
@@ -872,9 +1017,10 @@ COMMENT STYLES
 
 /* h3 comment title */
 #comments-title {
-	padding: 0.75em;
-	margin: 0;
-	border-top: 1px solid $light-gray;
+	padding: 0 0.5rem;
+	margin: 1.5rem 0 0;
+	line-height: 1.3;
+	border-bottom: 1px solid $pale-green;
 
 	/* number of comments span */
 	span {}
@@ -900,7 +1046,7 @@ COMMENT STYLES
 	position: relative;
 	clear: both;
 	overflow: hidden;
-	padding: 1.5em;
+	padding: 1.5rem 10px;
 	border-bottom: 1px solid $light-gray;
 
 	.comment-author {
@@ -926,7 +1072,7 @@ COMMENT STYLES
 			font-style: italic;
 
 			a {
-				color: $meta-gray;
+				color: lighten($black, 40%);
 				text-decoration: none;
 
 				&:hover {
@@ -941,8 +1087,7 @@ COMMENT STYLES
 
 		.avatar {
 			position: absolute;
-			left: 16px;
-			border-radius: 50%;
+			left: 10px;
 		}
 
 	} /* end .commentlist .vcard */
@@ -992,10 +1137,10 @@ COMMENT STYLES
 	/* general comment classes */
 	&.alt {}
 	&.odd {
-		background-color: $white;
+		
 	}
 	&.even {
-		background: $light-gray;
+		
 	}
 	&.parent {}
 	&.comment {}
@@ -1065,7 +1210,6 @@ COMMENT FORM STYLES
 .comment-respond {
 	@extend .cf;
 	padding: 1.5em;
-	border-top: 1px solid $light-gray;
 }
 
 	#reply-title {
@@ -1096,7 +1240,6 @@ COMMENT FORM STYLES
 	#submit {
 		@extend .green-btn;
 		float: right;
-		font-size: 1em;
 	}
 
 	/* comment form title */

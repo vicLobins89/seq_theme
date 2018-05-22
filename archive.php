@@ -2,73 +2,89 @@
 
 			<div id="content">
 
-				<div id="inner-content" class="wrap cf">
+				<div id="inner-content" class="cf">
 
-						<main id="main" class="m-all t-2of3 d-5of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+						<div id="main" class="cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
-							<?php
-							the_archive_title( '<h1 class="page-title">', '</h1>' );
-							the_archive_description( '<div class="taxonomy-description">', '</div>' );
-							?>
+							<?php get_sidebar('sidebar2'); ?>
+
+							<?php if ( have_posts() ) :  ?>
 							
-							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article">
-
-								<header class="entry-header article-header">
-
-									<h3 class="h2 entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-									<p class="byline entry-meta vcard">
-										<?php printf( __( 'Posted', 'bonestheme' ).' %1$s %2$s',
-                  							     /* the time the post was published */
-                  							     '<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
-                       								/* the author of the post */
-                       								'<span class="by">'.__('by', 'bonestheme').'</span> <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author_link( get_the_author_meta( 'ID' ) ) . '</span>'
-                    							); ?>
-									</p>
-
-								</header>
-
-								<section class="entry-content cf">
-
-									<?php the_post_thumbnail( 'full' ); ?>
-
+							<div class="team-carousel cf">
+							<?php
+							$featuredQuery = new WP_Query( array(
+								'category_name'  => 'featured',
+								'posts_per_page' => -1
+							) );	
+							?>
+							<?php while ( $featuredQuery->have_posts() ) : $featuredQuery->the_post(); ?>
+								<div class="carousel-item">
+									<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="post-thumb">
+										<?php the_post_thumbnail('rectangle-thumb-s'); ?>
+									</a>
+									<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="post-title">
+										<?php the_title(); ?>
+									</a>
 									<?php the_excerpt(); ?>
-
-								</section>
-
-								<footer class="article-footer">
-
-								</footer>
-
-							</article>
-
+								</div>
 							<?php endwhile; ?>
+							<?php wp_reset_postdata(); ?>
+							</div>
+							
+							<div class="wrap posts-main cf">
+								<div class="cat-filter">
+									<?php
+									if( is_category() ) {
+										wp_list_categories(array(
+											'exclude' => 17,
+											'hide_empty' => true,
+											'style' => 'list',
+											'title_li' => 'Categories'
+										));
+									} elseif( is_tag() ) {
+										the_tags( '<li>Tags</li><ul><li>', '</li><li>', '</li></ul>' );
+									}
+									?>
+								</div>
+								
+								<?php while (have_posts()) : the_post(); ?>
+									<article id="post-<?php the_ID(); ?>" <?php post_class( 'col-4 cf' ); ?> role="article">
 
-									<?php bones_page_navi(); ?>
+										<a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>" class="image-thumb">
+											<?php the_post_thumbnail('rectangle-thumb-s'); ?>
+										</a>
 
-							<?php else : ?>
+										<h2 class="h2 entry-title">
+											<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+										</h2>
 
-									<article id="post-not-found" class="hentry cf">
-										<header class="article-header">
-											<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
-										</header>
-										<section class="entry-content">
-											<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
-										</section>
-										<footer class="article-footer">
-												<p><?php _e( 'This is the error message in the archive.php template.', 'bonestheme' ); ?></p>
-										</footer>
+										<?php the_excerpt(); ?>
+
 									</article>
 
+								<?php endwhile; ?>
+							</div>
+							
+							<?php bones_page_navi(); ?>
+							
+							<?php else : ?>
+								<article id="post-not-found" class="hentry cf">
+									<header class="article-header">
+										<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
+									</header>
+									
+									<section class="entry-content">
+										<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
+									</section>
+								</article>
 							<?php endif; ?>
+							<?php wp_reset_postdata(); ?>
 
-						</main>
-
-					<?php get_sidebar(); ?>
+						</div>
 
 				</div>
 
 			</div>
+
 
 <?php get_footer(); ?>

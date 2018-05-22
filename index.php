@@ -6,55 +6,73 @@
 
 						<div id="main" class="cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
-							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+							<?php get_sidebar('sidebar2'); ?>
 
-							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article">
-
-								<header class="article-header">
-
-									<h1 class="h2 entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-
-								</header>
-
-								<section class="entry-content cf">
+							<?php if ( have_posts() ) :  ?>
+							
+							<div class="team-carousel cf">
+							<?php
+							$featuredQuery = new WP_Query( array(
+								'category_name'  => 'featured',
+								'posts_per_page' => -1
+							) );	
+							?>
+							<?php while ( $featuredQuery->have_posts() ) : $featuredQuery->the_post(); ?>
+								<div class="carousel-item">
+									<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="post-thumb">
+										<?php the_post_thumbnail('rectangle-thumb-s'); ?>
+									</a>
+									<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="post-title">
+										<?php the_title(); ?>
+									</a>
 									<?php the_excerpt(); ?>
-								</section>
-
-								<footer class="article-footer cf">
-									<p class="footer-comment-count">
-										<?php comments_number( __( '<span>No</span> Comments', 'bonestheme' ), __( '<span>One</span> Comment', 'bonestheme' ), __( '<span>%</span> Comments', 'bonestheme' ) );?>
-									</p>
-
-
-                 	<?php printf( '<p class="footer-category">' . __('filed under', 'bonestheme' ) . ': %1$s</p>' , get_the_category_list(', ') ); ?>
-
-                  <?php the_tags( '<p class="footer-tags tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
-
-
-								</footer>
-
-							</article>
-
+								</div>
 							<?php endwhile; ?>
+							<?php wp_reset_postdata(); ?>
+							</div>
+							
+							<div class="wrap posts-main cf">
+								<div class="cat-filter">
+									<?php wp_list_categories(array(
+										'exclude' => 17,
+										'hide_empty' => true,
+										'style' => 'list',
+										'title_li' => 'Filter'
+									)); ?>
+								</div>
+								
+								<?php while (have_posts()) : the_post(); ?>
+									<article id="post-<?php the_ID(); ?>" <?php post_class( 'col-4 cf' ); ?> role="article">
 
-									<?php bones_page_navi(); ?>
+										<a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>" class="image-thumb">
+											<?php the_post_thumbnail('rectangle-thumb-s'); ?>
+										</a>
 
-							<?php else : ?>
+										<h2 class="h2 entry-title">
+											<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+										</h2>
 
-									<article id="post-not-found" class="hentry cf">
-											<header class="article-header">
-												<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
-										</header>
-											<section class="entry-content">
-												<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
-										</section>
-										<footer class="article-footer">
-												<p><?php _e( 'This is the error message in the index.php template.', 'bonestheme' ); ?></p>
-										</footer>
+										<?php the_excerpt(); ?>
+
 									</article>
 
+								<?php endwhile; ?>
+							</div>
+							
+							<?php bones_page_navi(); ?>
+							
+							<?php else : ?>
+								<article id="post-not-found" class="hentry cf">
+									<header class="article-header">
+										<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
+									</header>
+									
+									<section class="entry-content">
+										<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
+									</section>
+								</article>
 							<?php endif; ?>
-
+							<?php wp_reset_postdata(); ?>
 
 						</div>
 

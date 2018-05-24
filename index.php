@@ -39,6 +39,7 @@
 										'style' => 'list',
 										'title_li' => 'Filter'
 									)); ?>
+									<hr style="margin: 0.75rem 0;">
 								</div>
 								
 								<?php while (have_posts()) : the_post(); ?>

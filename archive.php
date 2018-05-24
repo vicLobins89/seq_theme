@@ -45,6 +45,7 @@
 										the_tags( '<li>Tags</li><ul><li>', '</li><li>', '</li></ul>' );
 									}
 									?>
+									<hr style="margin: 0.75rem 0;">
 								</div>
 								
 								<?php while (have_posts()) : the_post(); ?>

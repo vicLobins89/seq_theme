@@ -2117,7 +2117,11 @@ LARGE VIEWING SIZE
     width: 1200px; }
 
   .nav {
-    margin: 1.65em 0; } }
+    margin: 1.65em 0; }
+
+  .page-home-page .featured-image .page-title, .page-home-page .featured-image .widget_text {
+    height: 60%;
+    width: 50%; } }
 /*********************
 RETINA (2x RESOLUTION DEVICES)
 *********************/

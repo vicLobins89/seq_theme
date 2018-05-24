@@ -46,5 +46,20 @@ if ( post_password_required() ) {
 
   <?php endif; ?>
 
-  <?php comment_form(); ?>
+<?php 
+$comment_args = array( 
+	'title_reply'=>'',
+	'comment_field' => '<p class="comment-form-comment"><textarea id="comment" name="comment" aria-required="true" placeholder="Have your say..."></textarea></p>',
+	'fields' => apply_filters( 'comment_form_default_fields', array(
+		'author' =>
+		  '<p class="comment-form-author">' .
+		  '<label for="author">' . __( 'Name', 'domainreference' ) . '</label> ' .
+		  ( $req ? '<span class="required">*</span>' : '' ) .
+		  '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
+		  '" size="30"' . $aria_req . ' /></p>',
+	) ),
+);
+
+comment_form($comment_args);
+?>
 

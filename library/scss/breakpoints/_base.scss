@@ -11,7 +11,7 @@ GENERAL STYLES
 *********************/
 
 html {
-	font-size: 100%;
+	font-size: 76%;
 }
 
 body {
@@ -23,6 +23,10 @@ body {
 	background-color: $white;
   	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
+}
+
+#container {
+	overflow: hidden;
 }
 
 img {
@@ -44,42 +48,45 @@ img {
 
 hr {
 	display: block;
-	width: 100%;
+	width: 87%;
 	height: 1px;
 	background: $pale-green;
 	border: none;
 	clear: both;
-	margin: 2rem 0;
+	margin: 1rem auto;
 }
 
 .featured-image {
 	position: relative;
 	font-size: 0;
     margin-bottom: 2.5rem;
+	overflow: hidden;
 
 	.page-title {
 		position: absolute;
-		width: 40%;
-		height: 50%;
-		overflow: auto;
+		height: 56%;
+		width: 100%;
+		text-align: center;
+		overflow: hidden;
 		margin: auto 0;
 		top: 0;
 		bottom: 0;
 		right: 0;
-		left: 20%;
-		font-size: 130%;
+		left: 0;
 		
 		h1 {
 			color: $white;
 			font-weight: 600;
 			text-transform: uppercase;
 			margin: 0;
+			text-align: center;
+    		font-size: 2.35rem;
 		}
 		
 		p {
 			color: $white;
 			width: 80%;
-			margin: 0.5rem 0 1.5rem;
+			margin: 0.5rem auto 1.5rem;
 			font-size: 1.35rem;
 		}
 		
@@ -87,21 +94,49 @@ hr {
 			-webkit-box-shadow: 4px 4px 14px 0px rgba(0,0,0,0.4);
 			-moz-box-shadow: 4px 4px 14px 0px rgba(0,0,0,0.4);
 			box-shadow: 4px 4px 14px 0px rgba(0,0,0,0.4);
+			
+			&:hover, &:focus {
+				color: $green;
+			}
 		}
 		
-		.page-home-page & {
-			height: 43%;
-			left: 45%;
-		}
-		
-		.page-about-us & {
+		.page-about-us &,
+		.page-roadmap &,
+		.blog &,
+		.archive &,
+		.page-contact-us & {
 			text-shadow: 5px 1px 14px rgba(0, 0, 0, 0.9);
 		}
 	}
 	
 	img {
-		width: 100%;
+		position: relative;
+		width: 260%;
 		height: auto;
+		max-width: none;
+		left: -50%;
+		
+		.page-technology &,
+		.page-about-us &,
+		.page-roadmap &,
+		.blog &,
+		.archive & {
+			width: 160%;
+		}
+		
+		.page-contact-us & {
+			width: 200%;
+		}
+		
+		.blog & {
+			max-width: none !important;
+			left: 0;
+		}
+		
+		.single & {
+			width: 100%;
+			left: 0;
+		}
 	}
 	
 	.widget_media_image {
@@ -123,25 +158,17 @@ hr {
 	font-size: 0;
 	
 	&.wrap {
-		margin: 0.75rem auto 1rem;
+		margin: 0 auto;
 	}
 	
 	[class*="col-"] {
-		padding: 2rem;
+		padding: 1rem 2rem;
 	}
 	
 	.col-6 {
 		float: none;
 		display: inline-block;
 		vertical-align: middle;
-		
-		&:nth-child(odd) {
-			padding-right: 2.85rem;
-		}
-		
-		&:nth-child(even) {
-			padding-left: 2.15rem;
-		}
 	}
 	
 	.page-contact-us & {
@@ -166,14 +193,17 @@ hr {
 	}
 	
 	&.grad-alt {
-		margin: 0 auto;
+		margin: 0 auto !important;
 		padding: 0;
+		display: flex;
+		flex-direction: column;
 
 		[class*="col-"] {
 			margin: 0;
 			padding: 3.75rem 3rem 4.25rem;
 			vertical-align: top;
 			min-height: 17rem;
+			order: 2;
 			
 			p {
 				margin: 1rem 0;
@@ -186,12 +216,21 @@ hr {
 					line-height: 2;
 				}
 			}
+			
+			&.grad {
+				order: 1;
+			}
+		}
+		
+		hr {
+			order: 3;
 		}
 		
 		.icon, img[alt*="icon-"] {
 			transform: scale(0.7);
 			transform-origin: top;
-    		margin: 0 1rem;
+    		margin: 0 0.5rem 1rem 0;
+			max-width: 100px;
 		}
 	}
 }
@@ -227,6 +266,7 @@ hr {
 				vertical-align: top;
 				text-align: left;
 				padding: 0 1.5rem;
+				margin-bottom: 1rem;
 				
 				p {
 					margin: 0;
@@ -292,7 +332,7 @@ hr {
 	}
 	
 	.carousel-item {
-		padding: 2.5rem 3.5rem 0;
+		padding: 2.5rem 2.5rem 0;
 		
 		.blog &, .archive & {
 			padding: 2.5rem 1.5rem 0;
@@ -394,7 +434,7 @@ WORDPRESS BODY CLASSES
 	}
 	
 	ul {
-		margin-left: 1.85rem;
+		display: block;
 
 		li {
 			margin-right: 1.5rem;
@@ -420,45 +460,29 @@ WORDPRESS BODY CLASSES
 	@extend .blog;
 }
 
-.date {}                          /* date archive page */
-	.date-paged-1 {}                /* replace the number to the corresponding page number */
 .search {}                        /* search page */
 	.search-results {}              /* search result page */
 	.search-no-results {}           /* no results search page */
 	.search-paged-1 {}              /* individual paged search (i.e. body.search-paged-3) */
 .error404 {}                      /* 404 page */
-.single {}                        /* single post page */
-	.postid-1 {}                    /* individual post page by id (i.e. body.postid-73) */
-	.single-paged-1 {}              /* individual paged single (i.e. body.single-paged-3) */
-.attachment {}                    /* attatchment page */
-	.attachmentid-1 {}              /* individual attatchment page (i.e. body.attachmentid-763) */
-	.attachment-mime-type {}        /* style mime type pages */
-.author {}                        /* author page */
-	.author-nicename {}             /* user nicename (i.e. body.author-samueladams) */
-	.author-paged-1 {}              /* paged author archives (i.e. body.author-paged-4) for page 4 */
-.category {}                      /* category page */
-	.category-1 {}                  /* individual category page (i.e. body.category-6) */
-	.category-paged-1 {}            /* replace the number to the corresponding page number */
-.tag {}                           /* tag page */
-	.tag-slug {}                    /* individual tag page (i.e. body.tag-news) */
-	.tag-paged-1 {}                 /* replace the number to the corresponding page number */
-.page-template {}                 /* custom page template page */
-	.page-template-page-php {}      /* individual page template (i.e. body.page-template-contact-php */
-	.page-paged-1 {}                /* replace the number to the corresponding page number */
-	.page-parent {}                 /* parent page template */
-	.page-child {}                  /* child page template */
-	.parent-pageid-1 {}             /* replace the number to the corresponding page number */
-.logged-in {}                     /* if user is logged in */
-.paged {}                         /* paged items like search results or archives */
-	.paged-1 {}                     /* individual paged (i.e. body.paged-3) */
+
+.single {
+	.wrap.post {
+		max-width: 95%;
+	}
+}
 
 /*********************
 LAYOUT & GRID STYLES
 *********************/
 
 .wrap {
-	width: 96%;
+	width: 100%;
 	margin: 0 auto;
+	
+	&.insights-text {
+		margin-left: 2rem;
+	}
 }
 
 /*********************
@@ -555,15 +579,36 @@ HEADER STYLES
 .header {
 	position: relative;
 	background-color: $white;
+	
+	&.active {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		z-index: 999;
+		
+		#logo-mobile, .menu-button {
+			position: absolute;
+			z-index: 9999;
+			left: 0;
+		}
+		
+		.menu-button {
+			right: 0;
+			left: auto;
+		}
+	}
 }
 
 #logo {
+	display: none;
+}
+
+#logo-mobile {
 	display: block;
-	width: 240px;
-	margin: 1.4rem 0;
-	position: absolute;
-	left: 2rem;
-	font-size: 0;
+	width: 3.5rem;
+    margin: 0.75rem 1.25rem;
+    float: left;
+    font-size: 0;
 	
 	img {
 		max-width: 100%;
@@ -579,12 +624,41 @@ HEADER STYLES
 NAVIGATION STYLES
 *********************/
 
+.menu-button {
+	color: $green !important;
+	float: right;
+	margin: 1.2rem 1.25rem 1.1rem;
+	line-height: 1;
+    font-size: 2.4rem;
+}
+
+.menu-wrapper {
+	opacity: 0;
+	visibility: hidden;
+	overflow-y: scroll;
+    overflow-x: hidden;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	padding: 3rem 1rem;
+	
+	@include transition(all 0.3s ease-in-out);
+	
+	.active & {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
 nav {
+	
 	li {
+		text-align: center;
+		
 		a {
 			text-transform: uppercase;
 			font-weight: 400;
-			font-size: 0.85rem;
+			font-size: 1.25rem;
 			line-height: 1;
 			text-decoration: none;
 			color: $link-color;
@@ -602,10 +676,12 @@ nav {
 
 .nav {
 	border-bottom: 0;
-	margin: 1.65em 0 1.5em;
+	margin: 1.65em 0 .75em;
+	border-top: 1px solid $green;
 
 	li {
 		list-style: none;
+		border-bottom: 1px solid $green;
 
 		a {
 			display: block;
@@ -659,6 +735,21 @@ nav {
 
 	}  /* end current highlighters */
 
+}
+
+.socket-nav {
+	margin: 0;
+	text-align: center;
+	
+	.green-btn {
+		display: block;
+		max-width: 14rem;
+		margin: 1.5rem auto;
+	}
+
+	.lang-item {
+		display: inline-block;
+	}
 }
 
 
@@ -877,8 +968,31 @@ POSTS & CONTENT STYLES
 		margin: 0 0 1.5em;
 		border-radius: 3px;
 	}
+}
 
-} /* end .entry-content */
+.related-posts {
+	.related-post {
+		a {
+			display: block;
+			
+			img {
+				width: 100%;
+				height: auto;
+			}
+			
+			&.entry-title {
+				color: lighten($black, 20%);
+				font-weight: 400;
+				font-size: 1.35rem;
+				text-decoration: none;
+				
+				&:hover, &:focus {
+					color: lighten($black, 40%);
+				}
+			}
+		}
+	}
+}
 
 .wp-caption {
 	max-width: 100%;
@@ -1126,7 +1240,7 @@ COMMENT STYLES
 	&:not(.depth-1) {
 		margin-top: 0;
 		margin-left: 7px;
-		padding: 7px;
+		padding: 15px 0 15px 7px;
 	}
 
 	&.depth-2 {}
@@ -1157,49 +1271,51 @@ COMMENT STYLES
 
 
 
-	/* comment meta */
-	.comment-meta {
+/* comment meta */
+.comment-meta {
 
-		a {}
+	a {}
 
+}
+
+.commentmetadata {
+
+	a {}
+
+}
+
+/* comment content */
+.comment_content {
+
+	p {
+		margin: 0.7335em 0 1.5em;
+		font-size: 1em;
+		line-height: 1.5em;
 	}
 
-	.commentmetadata {
+} /* end .commentlist .comment_content */
 
-		a {}
+/* comment reply link */
+a.comment-reply-link {
+	@extend .green-btn;
+	font-size: 0.9rem;
+	float: right;
+	padding: 0.3rem 0;
+	min-width: 5rem;
 
+	&:hover,
+	&:focus {
 	}
 
-	/* comment content */
-	.comment_content {
+} /* end .commentlist .comment-reply-link */
 
-		p {
-			margin: 0.7335em 0 1.5em;
-			font-size: 1em;
-			line-height: 1.5em;
-		}
-
-	} /* end .commentlist .comment_content */
-
-	/* comment reply link */
-	.comment-reply-link {
-		@extend .green-btn;
-		font-size: 0.9em;
-		float: right;
-
-		&:hover,
-		&:focus {
-		}
-
-	} /* end .commentlist .comment-reply-link */
-
-	/* edit comment link */
-	.comment-edit-link {
-		font-style: italic;
-		margin: 0 7px;
-		text-decoration: none;
-		font-size: 0.9em;
-	}
+/* edit comment link */
+.comment-edit-link {
+	font-style: italic;
+	margin: 0 7px;
+	text-decoration: none;
+	font-size: 0.9em;
+}
 
 
 
@@ -1209,7 +1325,7 @@ COMMENT FORM STYLES
 
 .comment-respond {
 	@extend .cf;
-	padding: 1.5em;
+	padding: 1.5rem 0;
 }
 
 	#reply-title {
@@ -1240,6 +1356,10 @@ COMMENT FORM STYLES
 	#submit {
 		@extend .green-btn;
 		float: right;
+		font-size: 0.9rem;
+		padding: 0.3rem 0;
+		min-width: 8rem;
+		margin-right: 0;
 	}
 
 	/* comment form title */
@@ -1309,6 +1429,8 @@ FOOTER STYLES
 
 .pre-footer {
 	.col-6 {
+		padding: 10px 2rem;
+		
 		&:nth-child(even) {
 			padding: 0 2rem;
 		}
@@ -1316,11 +1438,11 @@ FOOTER STYLES
 }
 
 .social {
-	float: right;
+	text-align: center;
 	
 	a {
 		color: lighten($black, 20%);
-		margin-left: 3rem;
+		margin: 0 1.5rem;
 		
 		&:hover, &:focus {
 			color: $gray;
@@ -1343,20 +1465,24 @@ FOOTER STYLES
 }
 
 .footer-links {
-	
-	float: left;
-
 	ul {
 		text-align: left;
 		margin: 0 0 1rem;
+		border: none;
+		text-align: center;
 
 		li {
+			display: inline-block;
+			border: none;
+			
 			a {
 				text-transform: none;
 				padding: 0;
-				margin: 0 3rem 0 0;
+				margin: 0 1.5rem;
 				font-weight: 400;
 				font-size: 1.45rem;
+				text-decoration: none;
+				border: none;
 				color: lighten($black, 20%);
 			}
 		}
@@ -1369,5 +1495,6 @@ FOOTER STYLES
 .copyright {
 	clear: both;
 	font-size: 0.85rem;
-	margin: 0;
+	margin: 1rem 0;
+    text-align: center;
 }

@@ -6,6 +6,27 @@ Stylesheet: 481px and Up Stylesheet
 
 ******************************************************************/
 
+/*********************
+GENERAL STYLES
+*********************/
+
+html {
+	font-size: 81%;
+}
+
+.featured-image {
+	img {
+		width: 180%;
+		left: -30%;
+	}
+}
+
+.team-carousel {
+	.carousel-item {
+		padding: 2.5rem 1.5rem 0;
+	}
+}
+
 
 /*********************
 NAVIGATION STYLES

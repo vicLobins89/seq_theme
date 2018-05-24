@@ -45,7 +45,7 @@
 									<article id="post-<?php the_ID(); ?>" <?php post_class( 'col-4 cf' ); ?> role="article">
 
 										<a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>" class="image-thumb">
-											<?php the_post_thumbnail('rectangle-thumb-s'); ?>
+											<?php the_post_thumbnail('rectangle-thumb-l'); ?>
 										</a>
 
 										<h2 class="h2 entry-title">

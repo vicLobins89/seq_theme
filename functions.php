@@ -65,12 +65,14 @@ if ( ! isset( $content_width ) ) {
 
 // Thumbnail sizes
 add_image_size( 'rectangle-thumb-s', 450, 270, true );
+add_image_size( 'rectangle-thumb-l', 770, 415, true );
 
 add_filter( 'image_size_names_choose', 'bones_custom_image_sizes' );
 
 function bones_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
         'rectangle-thumb-s' => __('450px by 270px'),
+        'rectangle-thumb-l' => __('770px by 415px'),
     ) );
 }
 

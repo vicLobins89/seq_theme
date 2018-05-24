@@ -21,16 +21,16 @@ var viewport = updateViewportDimensions();
 /*
  * Throttle Resize-triggered Events
 */
-var waitForFinalEvent = (function () {
-	"use strict";
-	var timers = {};
-	return function (callback, ms, uniqueId) {
-		if (!uniqueId) { uniqueId = "Don't call this twice without a uniqueId"; }
-		if (timers[uniqueId]) { clearTimeout (timers[uniqueId]); }
-		timers[uniqueId] = setTimeout(callback, ms);
-	};
-})();
-var timeToWaitForLast = 100;
+//var waitForFinalEvent = (function () {
+//	"use strict";
+//	var timers = {};
+//	return function (callback, ms, uniqueId) {
+//		if (!uniqueId) { uniqueId = "Don't call this twice without a uniqueId"; }
+//		if (timers[uniqueId]) { clearTimeout (timers[uniqueId]); }
+//		timers[uniqueId] = setTimeout(callback, ms);
+//	};
+//})();
+//var timeToWaitForLast = 100;
 
 
 jQuery(document).ready(function($) {
@@ -38,6 +38,10 @@ jQuery(document).ready(function($) {
 	"use strict";
 	
 	viewport = updateViewportDimensions();
+	
+	$('.menu-button').on('click', function(){
+		$(this).parents('.header').toggleClass('active');
+	});
 	
 	$('.news-carousel').slick({
 		slidesToShow: 4,
@@ -48,6 +52,12 @@ jQuery(document).ready(function($) {
 		centerMode: true,
 		centerPadding: '80px',
 		responsive: [
+			{
+				breakpoint: 1030,
+				settings: {
+					slidesToShow: 3
+				}
+			},
 			{
 				breakpoint: 768,
 				settings: {
@@ -87,7 +97,16 @@ jQuery(document).ready(function($) {
 		]
 	});
 	
-	$('.features-outer li').css('width', (100/$('.features-outer li').length)+'%');
+	
+	$(window).on('load resize', function(){
+		viewport = updateViewportDimensions();
+		
+		if( viewport.width >= 768 ) {
+			$('.features-outer li').css('width', (100/$('.features-outer li').length)+'%');
+		} else {
+			$('.features-outer li').css('width', 100+'%');
+		}
+	});
 
 
 }); /* end of as page load scripts */

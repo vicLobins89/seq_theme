@@ -161,7 +161,7 @@
 									) ); ?>
 								
 									<?php if ( have_posts() ) : ?>
-										<div class="wrap"><h4>Insights and articles...</h4></div>
+										<div class="wrap insights-text"><h4>Insights and articles...</h4></div>
 										<div class="news-carousel cf">
 										<?php while ( have_posts() ) : the_post(); ?>
 											<div class="carousel-item">

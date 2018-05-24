@@ -59,9 +59,13 @@
 					} else {
 						echo '<p id="logo" class="h1" itemscope itemtype="http://schema.org/Organization"><a href="'. home_url() .'">'. get_bloginfo('name') .'</a></p>';
 					}
+					if($options['logo_alt']){
+						echo '<a id="logo-mobile" href="'. home_url() .'"><img src="'. $options['logo_alt'] .'" alt="'. get_bloginfo('name') .'" /></a>';
+					}
 					?>
-
-					<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+					
+					<a class="menu-button" title="Main Menu"><i class="fas fa-bars"></i></a>
+					<div class="menu-wrapper"><nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 						<?php wp_nav_menu(array(
 							'container' => false,                           // remove nav container
 							'container_class' => 'menu cf',                 // class of container (should you choose to use it)
@@ -91,7 +95,7 @@
 							'depth' => 0,                                   // limit the depth of the nav
 							'fallback_cb' => ''                             // fallback function (if there is one)
 						)); ?>
-					</nav>
+					</nav></div>
 
 				</div>
 

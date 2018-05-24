@@ -137,6 +137,14 @@ function display_theme_panel_fields() {
 	);
 	
 	add_settings_field(
+		'logo_alt',
+		'Alternative Logo',
+		'logo_display_alt',
+		'rh-settings-page',
+		'rh-settings-page_section'
+	);
+	
+	add_settings_field(
 		'twitter_url',
 		'Twitter Profile URL',
 		'display_twitter_el',
@@ -211,6 +219,31 @@ function logo_display() {
 					var uploaded_image = image.state().get('selection').first();
 					var image_url = uploaded_image.toJSON().url;
 					$('#image_url').val(image_url);
+				});
+			});
+		});
+	</script>
+	<?php
+}
+
+function logo_display_alt() {
+	$options = get_option('rh_settings');
+	?>
+	<input type="text" name="rh_settings[logo_alt]" id="image_url_alt" class="regular-text" value="<?php echo $options['logo_alt']; ?>">
+    <input type="button" name="upload-btn_alt" id="upload-btn_alt" class="button-secondary" value="Upload Image"><br><br>
+    <img  class="current-image" src="<?php echo $options['logo_alt']; ?>" style="max-width: 80px;" />
+    <script type="text/javascript">
+		jQuery(document).ready(function($){
+			$('#upload-btn_alt').click(function(e){
+				e.preventDefault();
+				var image = wp.media({
+					title: 'Upload Image',
+					multiple: false
+				}).open()
+				.on('select', function(e){
+					var uploaded_image = image.state().get('selection').first();
+					var image_url = uploaded_image.toJSON().url;
+					$('#image_url_alt').val(image_url);
 				});
 			});
 		});

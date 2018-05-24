@@ -32,27 +32,26 @@ input[type="color"],
 select,
 textarea,
 .field {
-  display: block;
-  height: 40px;
-  line-height: 1em;
-  padding: 0 12px;
-  margin-bottom: 14px;
-  font-size: 1em;
-  color: $text-color;
-  border-radius: 3px;
-  vertical-align: middle;
-  box-shadow: none;
-  border: 1px solid $black;
-  width: 100%;
-  max-width: 400px;
-  font-family: $sans-serif;
-  background-color: $white;
-  @include transition(background-color 0.24s ease-in-out);
+	display: block;
+	height: 40px;
+	line-height: 1.2;
+	padding: 0 12px;
+	margin-bottom: 14px;
+	font-size: 1em;
+	font-weight: 400;
+	color: lighten($black, 20%);
+	vertical-align: middle;
+	box-shadow: none;
+	border: 1px solid $gray;
+	width: 100%;
+	max-width: 400px;
+	font-family: $sans-serif;
+	background-color: $white;
+	@include transition(background-color 0.24s ease-in-out);
 
   // a focused input (or hovered on)
   &:focus,
   &:active {
-    background-color: lighten($gray, 4%);
     outline: none; 
   } // end hover or focus
 

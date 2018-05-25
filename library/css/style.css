@@ -2090,6 +2090,8 @@ DESKTOP
     .page-home-page .featured-image .page-title, .page-home-page .featured-image .widget_text {
       height: 50%;
       left: 40%; }
+    .page-about-us .featured-image .page-title, .page-about-us .featured-image .widget_text {
+      height: 40%; }
 
   .single .wrap.post {
     max-width: 70%; }

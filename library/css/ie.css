@@ -377,6 +377,8 @@ Stylesheet: Desktop Stylsheet
   .page-home-page .featured-image .page-title {
     height: 50%;
     left: 40%; }
+  .page-about-us .featured-image .page-title {
+    height: 40%; }
 
 .single .wrap.post {
   max-width: 70%; }

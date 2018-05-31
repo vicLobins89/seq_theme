@@ -22,6 +22,10 @@ hr {
 	margin: 2rem auto;
 }
 
+#content {
+	padding-top: 125px;
+}
+
 .featured-image {
 	.page-title {
 		width: 60%;
@@ -50,6 +54,10 @@ hr {
 		
 		.page-contact-us & {
 			height: 59%;
+		}
+		
+		.page-request-a-demo & {
+			height: 27%;
 		}
 	}
 
@@ -117,6 +125,20 @@ hr {
 	}
 }
 
+.entry-content {
+	h2 {
+		margin: 1rem 3rem;
+	}
+}
+
+.blog {
+	.posts-main {
+		.col-4 {
+			height: 20rem;
+		}
+	}
+}
+
 
 /*********************
 LAYOUT & GRID STYLES
@@ -134,7 +156,13 @@ LAYOUT & GRID STYLES
 HEADER STYLES
 *********************/
 
-.header {}
+.header {
+	@include transition(opacity 0.3s ease-in-out);
+	
+	&.scrolled {
+		opacity: 0.8;
+	}
+}
 
 #logo {
 	display: block;

@@ -92,6 +92,9 @@ GENERAL STYLES
 html {
   font-size: 81%; }
 
+#content {
+  padding-top: 62px; }
+
 .featured-image img {
   width: 180%;
   left: -30%; }
@@ -151,6 +154,9 @@ hr {
   width: 100%;
   margin: 2rem auto; }
 
+#content {
+  padding-top: 125px; }
+
 .featured-image .page-title {
   width: 60%;
   height: 50%;
@@ -171,6 +177,8 @@ hr {
     left: 35%; }
   .page-contact-us .featured-image .page-title {
     height: 59%; }
+  .page-request-a-demo .featured-image .page-title {
+    height: 27%; }
 .featured-image img {
   width: 100% !important;
   height: auto;
@@ -204,6 +212,12 @@ hr {
 .single .wrap.post {
   max-width: 90%; }
 
+.entry-content h2 {
+  margin: 1rem 3rem; }
+
+.blog .posts-main .col-4 {
+  height: 20rem; }
+
 /*********************
 LAYOUT & GRID STYLES
 *********************/
@@ -215,6 +229,12 @@ LAYOUT & GRID STYLES
 /*********************
 HEADER STYLES
 *********************/
+.header {
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out; }
+  .header.scrolled {
+    opacity: 0.8; }
+
 #logo {
   display: block;
   width: 240px;
@@ -369,6 +389,9 @@ Author: Vic Lobins
 Stylesheet: Desktop Stylsheet
 
 ******************************************************************/
+#content {
+  padding-top: 74px; }
+
 .wrap {
   width: 1020px; }
 

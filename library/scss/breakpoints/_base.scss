@@ -108,6 +108,7 @@ hr {
 		
 		.page-about-us &,
 		.page-roadmap &,
+		.page-request-a-demo &,
 		.blog &,
 		.archive &,
 		.page-contact-us & {
@@ -124,6 +125,7 @@ hr {
 		
 		.page-technology &,
 		.page-about-us &,
+		.page-request-a-demo &,
 		.page-roadmap &,
 		.blog &,
 		.archive & {
@@ -387,7 +389,6 @@ WORDPRESS BODY CLASSES
 	.entry-title {
 		line-height: 1;
 		font-size: 1rem;
-		height: 2rem;
 		margin-top: 0.5em;
 		
 		a {
@@ -408,7 +409,6 @@ WORDPRESS BODY CLASSES
 		p {
 			margin: 0;
     		font-size: 0.9rem;
-			height: 2.5rem;
 		}
 
 		img {
@@ -423,6 +423,11 @@ WORDPRESS BODY CLASSES
 
 .cat-filter {
 	margin-left: 1.5rem;
+	margin-right: 1.5rem;
+	
+	hr {
+		width: 100%;
+	}
 	
 	ul, li {
 		display: inline-block;
@@ -583,8 +588,10 @@ HEADER STYLES
 *********************/
 
 .header {
-	position: relative;
-	background-color: $white;
+	position: fixed;
+	background: $white;
+	z-index: 999;
+	width: 100%;
 	
 	&.active {
 		position: fixed;
@@ -764,6 +771,7 @@ POSTS & CONTENT STYLES
 *********************/
 
 #content {
+	padding-top: 58px;
 }
 
 .hentry {
@@ -784,7 +792,8 @@ POSTS & CONTENT STYLES
 
 .single-title,
 .entry-title {
-	margin: 0;
+	margin: 0 2rem 0.5rem 0;
+    line-height: 1;
 }
 
 .single-title {}
@@ -856,7 +865,7 @@ POSTS & CONTENT STYLES
 	h2 {
 		font-weight: 100;
 		font-size: 2.25rem;
-		margin: 1rem 3rem;
+		margin: 1rem 0;
 	}
 
 	p {

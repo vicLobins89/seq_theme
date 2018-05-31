@@ -11,6 +11,30 @@ http://websemantics.co.uk/online_tools/image_to_data_uri_convertor/
 ******************************************************************/
 
 /*********************
+CF7
+*********************/
+
+div.wpcf7 {
+    padding: 1.5rem 2rem;
+	background: $light-gray;
+	margin: 4rem 0 3rem;
+	
+	p {
+		font-weight: 400;
+		
+		span {
+			color: red;
+		}
+	}
+	
+	@media only screen and (min-width: 768px) {
+		margin: 4rem 3rem 3rem;
+		padding: 3rem 4rem;
+	}
+}
+
+
+/*********************
 INPUTS
 *********************/
 
@@ -44,7 +68,6 @@ textarea,
 	box-shadow: none;
 	border: 1px solid $gray;
 	width: 100%;
-	max-width: 400px;
 	font-family: $sans-serif;
 	background-color: $white;
 	@include transition(background-color 0.24s ease-in-out);

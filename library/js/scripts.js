@@ -97,6 +97,14 @@ jQuery(document).ready(function($) {
 		]
 	});
 	
+	var headerHeight = $('.header').outerHeight();
+	$(window).on('scroll', function(){
+		if( $(window).scrollTop() >= headerHeight ) {
+			$('.header').addClass('scrolled');
+		} else {
+			$('.header').removeClass('scrolled');
+		}
+	});
 	
 	$(window).on('load resize', function(){
 		viewport = updateViewportDimensions();
@@ -106,6 +114,9 @@ jQuery(document).ready(function($) {
 		} else {
 			$('.features-outer li').css('width', 100+'%');
 		}
+		
+		headerHeight = $('.header').outerHeight();
+		$('#content').css('padding-top', headerHeight+'px');
 	});
 
 

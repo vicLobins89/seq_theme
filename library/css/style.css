@@ -632,6 +632,22 @@ http://websemantics.co.uk/online_tools/image_to_data_uri_convertor/
 
 ******************************************************************/
 /*********************
+CF7
+*********************/
+div.wpcf7 {
+  padding: 1.5rem 2rem;
+  background: #dcdcdc;
+  margin: 4rem 0 3rem; }
+  div.wpcf7 p {
+    font-weight: 400; }
+    div.wpcf7 p span {
+      color: red; }
+  @media only screen and (min-width: 768px) {
+    div.wpcf7 {
+      margin: 4rem 3rem 3rem;
+      padding: 3rem 4rem; } }
+
+/*********************
 INPUTS
 *********************/
 input[type="text"],
@@ -663,7 +679,6 @@ textarea,
   box-shadow: none;
   border: 1px solid #8b8b8a;
   width: 100%;
-  max-width: 400px;
   font-family: "futura-pt", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #fff;
   -webkit-transition: background-color 0.24s ease-in-out;
@@ -988,7 +1003,7 @@ hr {
       box-shadow: 4px 4px 14px 0px rgba(0, 0, 0, 0.4); }
       .featured-image .page-title a:hover, .featured-image .widget_text a:hover, .featured-image .page-title a:focus, .featured-image .widget_text a:focus {
         color: #0b6b4e; }
-    .page-about-us .featured-image .page-title, .page-about-us .featured-image .widget_text, .page-roadmap .featured-image .page-title, .page-roadmap .featured-image .widget_text, .blog .featured-image .page-title, .archive .featured-image .page-title, .blog .featured-image .widget_text, .archive .featured-image .widget_text, .archive .featured-image .page-title, .archive .featured-image .widget_text, .page-contact-us .featured-image .page-title, .page-contact-us .featured-image .widget_text {
+    .page-about-us .featured-image .page-title, .page-about-us .featured-image .widget_text, .page-roadmap .featured-image .page-title, .page-roadmap .featured-image .widget_text, .page-request-a-demo .featured-image .page-title, .page-request-a-demo .featured-image .widget_text, .blog .featured-image .page-title, .archive .featured-image .page-title, .blog .featured-image .widget_text, .archive .featured-image .widget_text, .archive .featured-image .page-title, .archive .featured-image .widget_text, .page-contact-us .featured-image .page-title, .page-contact-us .featured-image .widget_text {
       text-shadow: 5px 1px 14px rgba(0, 0, 0, 0.9); }
   .featured-image img {
     position: relative;
@@ -996,7 +1011,7 @@ hr {
     height: auto;
     max-width: none;
     left: -50%; }
-    .page-technology .featured-image img, .page-about-us .featured-image img, .page-roadmap .featured-image img, .blog .featured-image img, .archive .featured-image img, .archive .featured-image img {
+    .page-technology .featured-image img, .page-about-us .featured-image img, .page-request-a-demo .featured-image img, .page-roadmap .featured-image img, .blog .featured-image img, .archive .featured-image img, .archive .featured-image img {
       width: 160%; }
     .page-contact-us .featured-image img {
       width: 200%; }
@@ -1152,7 +1167,6 @@ WORDPRESS BODY CLASSES
 .blog .entry-title, .archive .entry-title {
   line-height: 1;
   font-size: 1rem;
-  height: 2rem;
   margin-top: 0.5em; }
   .blog .entry-title a, .archive .entry-title a {
     color: #333333;
@@ -1163,15 +1177,17 @@ WORDPRESS BODY CLASSES
   padding: 1.5rem; }
 .blog .posts-main p, .archive .posts-main p {
   margin: 0;
-  font-size: 0.9rem;
-  height: 2.5rem; }
+  font-size: 0.9rem; }
 .blog .posts-main img, .archive .posts-main img {
   max-width: 100%; }
 .blog .image-thumb, .archive .image-thumb {
   display: block; }
 
 .cat-filter {
-  margin-left: 1.5rem; }
+  margin-left: 1.5rem;
+  margin-right: 1.5rem; }
+  .cat-filter hr {
+    width: 100%; }
   .cat-filter ul, .cat-filter li {
     display: inline-block;
     margin: 0;
@@ -1283,8 +1299,10 @@ p {
 HEADER STYLES
 *********************/
 .header {
-  position: relative;
-  background-color: #fff; }
+  position: fixed;
+  background: #fff;
+  z-index: 999;
+  width: 100%; }
   .header.active {
     position: fixed;
     width: 100%;
@@ -1385,6 +1403,9 @@ nav li {
 /*********************
 POSTS & CONTENT STYLES
 *********************/
+#content {
+  padding-top: 58px; }
+
 .hentry header {
   padding: .5rem 2rem 0; }
 .hentry footer {
@@ -1395,7 +1416,8 @@ POSTS & CONTENT STYLES
 /* end .hentry */
 .single-title,
 .entry-title {
-  margin: 0; }
+  margin: 0 2rem 0.5rem 0;
+  line-height: 1; }
 
 /* style individual post classes */
 /* post by id (i.e. post-3) */
@@ -1440,7 +1462,7 @@ POSTS & CONTENT STYLES
   .entry-content h2 {
     font-weight: 100;
     font-size: 2.25rem;
-    margin: 1rem 3rem; }
+    margin: 1rem 0; }
   .entry-content p {
     margin: 0 0 1.5em; }
   .entry-content table {
@@ -1802,6 +1824,9 @@ LARGER MOBILE DEVICES
   html {
     font-size: 81%; }
 
+  #content {
+    padding-top: 62px; }
+
   .featured-image img {
     width: 180%;
     left: -30%; }
@@ -1865,6 +1890,9 @@ TABLET & SMALLER LAPTOPS
     width: 100%;
     margin: 2rem auto; }
 
+  #content {
+    padding-top: 125px; }
+
   .featured-image .page-title, .featured-image .widget_text {
     width: 60%;
     height: 50%;
@@ -1885,6 +1913,8 @@ TABLET & SMALLER LAPTOPS
       left: 35%; }
     .page-contact-us .featured-image .page-title, .page-contact-us .featured-image .widget_text {
       height: 59%; }
+    .page-request-a-demo .featured-image .page-title, .page-request-a-demo .featured-image .widget_text {
+      height: 27%; }
   .featured-image img {
     width: 100% !important;
     height: auto;
@@ -1918,6 +1948,12 @@ TABLET & SMALLER LAPTOPS
   .single .wrap.post {
     max-width: 90%; }
 
+  .entry-content h2 {
+    margin: 1rem 3rem; }
+
+  .blog .posts-main .col-4, .archive .posts-main .col-4 {
+    height: 20rem; }
+
   /*********************
   LAYOUT & GRID STYLES
   *********************/
@@ -1929,6 +1965,12 @@ TABLET & SMALLER LAPTOPS
   /*********************
   HEADER STYLES
   *********************/
+  .header {
+    -webkit-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out; }
+    .header.scrolled {
+      opacity: 0.8; }
+
   #logo {
     display: block;
     width: 240px;
@@ -2086,6 +2128,9 @@ DESKTOP
   Stylesheet: Desktop Stylsheet
   
   ******************************************************************/
+  #content {
+    padding-top: 74px; }
+
   .wrap {
     width: 1020px; }
 
@@ -2119,6 +2164,9 @@ LARGE VIEWING SIZE
   ******************************************************************/
   html {
     font-size: 100%; }
+
+  #content {
+    padding-top: 86px; }
 
   .wrap {
     width: 1200px; }

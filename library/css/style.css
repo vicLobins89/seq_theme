@@ -1908,7 +1908,7 @@ TABLET & SMALLER LAPTOPS
       text-align: left; }
     .featured-image .page-title p, .featured-image .widget_text p {
       margin: 0.5rem 0 1.5rem; }
-    .page-home-page .featured-image .page-title, .page-home-page .featured-image .widget_text {
+    .page-sequentra .featured-image .page-title, .page-sequentra .featured-image .widget_text {
       height: 70%;
       left: 35%; }
     .page-contact-us .featured-image .page-title, .page-contact-us .featured-image .widget_text {
@@ -1933,7 +1933,7 @@ TABLET & SMALLER LAPTOPS
     text-align: left; }
     .row.grad-alt .icon, .row.grad-alt img[alt*="icon-"] {
       margin: 0 1rem 1rem; }
-    .page-home-page .row.grad-alt [class*="col-"] {
+    .page-sequentra .row.grad-alt [class*="col-"] {
       min-height: 28rem; }
     .page-technology .row.grad-alt [class*="col-"] {
       min-height: 21rem; }
@@ -2137,7 +2137,7 @@ DESKTOP
   .featured-image .page-title, .featured-image .widget_text {
     left: 20%;
     width: 40%; }
-    .page-home-page .featured-image .page-title, .page-home-page .featured-image .widget_text {
+    .page-sequentra .featured-image .page-title, .page-sequentra .featured-image .widget_text {
       height: 50%;
       left: 40%; }
     .page-about-us .featured-image .page-title, .page-about-us .featured-image .widget_text {
@@ -2149,7 +2149,7 @@ DESKTOP
   .nav {
     margin: 1.5em 0; }
 
-  .page-home-page .row.grad-alt [class*="col-"], .page-technology .row.grad-alt [class*="col-"] {
+  .page-sequentra .row.grad-alt [class*="col-"], .page-technology .row.grad-alt [class*="col-"] {
     min-height: 17rem; } }
 /*********************
 LARGE VIEWING SIZE
@@ -2174,7 +2174,7 @@ LARGE VIEWING SIZE
   .nav {
     margin: 1.65em 0; }
 
-  .page-home-page .featured-image .page-title, .page-home-page .featured-image .widget_text {
+  .page-sequentra .featured-image .page-title, .page-sequentra .featured-image .widget_text {
     height: 60%;
     width: 50%; } }
 /*********************

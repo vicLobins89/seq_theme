@@ -19,7 +19,7 @@ Stylesheet: Desktop Stylsheet
 		left: 20%;
 		width: 40%;
 		
-		.page-home-page & {
+		.page-sequentra & {
 			height: 50%;
     		left: 40%;
 		}
@@ -43,7 +43,7 @@ Stylesheet: Desktop Stylsheet
 .row {
 	&.grad-alt {
 		[class*="col-"] {
-			.page-home-page &,
+			.page-sequentra &,
 			.page-technology & {
 				min-height: 17rem;
 			}

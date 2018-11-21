@@ -1151,12 +1151,19 @@ hr {
     text-align: left; }
     .blog .team-carousel .carousel-item, .archive .team-carousel .carousel-item, .archive .team-carousel .carousel-item {
       padding: 2.5rem 1.5rem 0; }
-    .team-carousel .carousel-item h4, .team-carousel .carousel-item p {
+    .team-carousel .carousel-item h4, .team-carousel .carousel-item p, .team-carousel .carousel-item a {
       padding-left: 1rem;
       padding-right: 1rem; }
     .team-carousel .carousel-item img {
       max-width: 100%;
       height: auto; }
+    .team-carousel .carousel-item .bio {
+      overflow: hidden;
+      max-height: 0px;
+      -webkit-transition: max-height, 0.3s, ease-in-out;
+      transition: max-height, 0.3s, ease-in-out; }
+      .team-carousel .carousel-item .bio.active {
+        max-height: 600px; }
 
 .releases h2 {
   text-align: center;

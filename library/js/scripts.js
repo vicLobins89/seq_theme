@@ -73,6 +73,10 @@ jQuery(document).ready(function($) {
 		]
 	});
 	
+	$('.read-bio').on('click', function(){
+		$(this).next().toggleClass('active');
+	});
+	
 	/*$('.team-carousel').slick({
 		slidesToShow: 3,
 		slidesToScroll: 1,

@@ -357,7 +357,7 @@ hr {
 			padding: 2.5rem 1.5rem 0;
 		}
 		
-		h4, p {
+		h4, p, a {
 			padding-left: 1rem;
 			padding-right: 1rem;
 		}
@@ -365,6 +365,16 @@ hr {
 		img {
 			max-width: 100%;
 			height: auto;
+		}
+		
+		.bio {
+			overflow: hidden;
+			max-height: 0px;
+			@include transition(max-height, 0.3s, ease-in-out);
+			
+			&.active {
+				max-height: 600px;
+			}
 		}
 	}
 }

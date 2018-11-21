@@ -1162,6 +1162,7 @@ hr {
       overflow: hidden;
       max-height: 0px;
       line-height: 1.25;
+      margin: 0;
       -webkit-transition: max-height 0.3s ease-in-out;
       transition: max-height 0.3s ease-in-out; }
       .team-carousel .carousel-item .bio.active {
@@ -1170,9 +1171,20 @@ hr {
       margin: 0 0 8px; }
     .team-carousel .carousel-item .read-bio {
       color: #0b6b4e;
-      position: relative; }
+      position: relative;
+      margin-bottom: 10px; }
+      .team-carousel .carousel-item .read-bio.active:after {
+        transform: rotate(0deg); }
       .team-carousel .carousel-item .read-bio:after {
-        content: '^'; }
+        content: '^';
+        position: absolute;
+        font-size: 25px;
+        right: -2px;
+        top: 7px;
+        transform: rotate(180deg);
+        height: 13px;
+        width: 13px;
+        line-height: 1; }
 
 .releases h2 {
   text-align: center;

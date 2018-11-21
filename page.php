@@ -58,7 +58,7 @@
 								
 								<?php // TEAM MEMBERS ?>
 								<?php if( have_rows('team') ): ?>
-									<div class="team-carousel cf">
+									<div class="team-carousel wrap cf">
 									<?php while( have_rows('team') ): the_row(); ?>
 										<div class="carousel-item">
 											<img src="<?php the_sub_field('photo'); ?>" alt="<?php the_sub_field('name'); ?>">

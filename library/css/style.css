@@ -1154,6 +1154,9 @@ hr {
     .team-carousel .carousel-item h4, .team-carousel .carousel-item p {
       padding-left: 1rem;
       padding-right: 1rem; }
+    .team-carousel .carousel-item img {
+      max-width: 100%;
+      height: auto; }
 
 .releases h2 {
   text-align: center;

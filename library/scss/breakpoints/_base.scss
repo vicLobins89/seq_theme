@@ -370,7 +370,7 @@ hr {
 		.bio {
 			overflow: hidden;
 			max-height: 0px;
-			@include transition(max-height, 0.3s, ease-in-out);
+			@include transition(max-height 0.3s ease-in-out);
 			
 			&.active {
 				max-height: 600px;

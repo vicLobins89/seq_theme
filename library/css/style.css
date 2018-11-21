@@ -1160,8 +1160,8 @@ hr {
     .team-carousel .carousel-item .bio {
       overflow: hidden;
       max-height: 0px;
-      -webkit-transition: max-height, 0.3s, ease-in-out;
-      transition: max-height, 0.3s, ease-in-out; }
+      -webkit-transition: max-height 0.3s ease-in-out;
+      transition: max-height 0.3s ease-in-out; }
       .team-carousel .carousel-item .bio.active {
         max-height: 600px; }
 

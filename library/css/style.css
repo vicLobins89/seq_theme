@@ -1145,7 +1145,7 @@ hr {
     margin-bottom: 2.5rem; }
   .team-carousel .carousel-item {
     display: inline-block;
-    width: 33%;
+    width: 100;
     vertical-align: top;
     padding: 2rem;
     text-align: left; }
@@ -1882,6 +1882,9 @@ LARGER MOBILE DEVICES
     width: 180%;
     left: -30%; }
 
+  .team-carousel .carousel-item {
+    width: 49%; }
+
   /*********************
   NAVIGATION STYLES
   *********************/
@@ -1985,6 +1988,9 @@ TABLET & SMALLER LAPTOPS
       min-height: 28rem; }
     .page-technology .row.grad-alt [class*="col-"] {
       min-height: 21rem; }
+
+  .team-carousel .carousel-item {
+    width: 100%; }
 
   .cat-filter ul {
     display: inline-block;

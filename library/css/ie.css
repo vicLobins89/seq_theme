@@ -99,6 +99,9 @@ html {
   width: 180%;
   left: -30%; }
 
+.team-carousel .carousel-item {
+  width: 49%; }
+
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -198,6 +201,9 @@ hr {
     min-height: 28rem; }
   .page-technology .row.grad-alt [class*="col-"] {
     min-height: 21rem; }
+
+.team-carousel .carousel-item {
+  width: 100%; }
 
 .cat-filter ul {
   display: inline-block;

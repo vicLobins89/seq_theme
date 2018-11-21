@@ -338,18 +338,28 @@ hr {
 	}
 }
 
-.team-carousel {
-	@extend .news-carousel;
+.team-carousel {	
+	//@extend .news-carousel;
+	text-align: center;
 	
 	.blog &, .archive & {
 		margin-bottom: 2.5rem;
 	}
 	
 	.carousel-item {
-		padding: 2.5rem 2.5rem 0;
+		display: inline-block;
+		width: 33%;
+		vertical-align: top;
+		padding: 2rem;
+		text-align: left;
 		
 		.blog &, .archive & {
 			padding: 2.5rem 1.5rem 0;
+		}
+		
+		h4, p {
+			padding-left: 1rem;
+			padding-right: 1rem;
 		}
 	}
 }

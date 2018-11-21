@@ -1114,13 +1114,13 @@ hr {
         font-size: 3rem;
         font-weight: 400; }
 
-.news-carousel .carousel-item, .team-carousel .carousel-item {
+.news-carousel .carousel-item {
   padding: 2rem 2rem 0;
   border: none;
   outline: none; }
-.news-carousel .post-thumb img, .team-carousel .post-thumb img {
+.news-carousel .post-thumb img {
   margin-bottom: 0.85rem; }
-.news-carousel .post-title, .team-carousel .post-title {
+.news-carousel .post-title {
   display: block;
   color: #333333;
   font-size: 1.35rem;
@@ -1128,23 +1128,32 @@ hr {
   line-height: 1.2;
   text-decoration: none;
   margin: 0.5rem; }
-  .news-carousel .post-title:hover, .team-carousel .post-title:hover, .news-carousel .post-title:focus, .team-carousel .post-title:focus {
+  .news-carousel .post-title:hover, .news-carousel .post-title:focus {
     color: #8b8b8a; }
-.news-carousel h4, .team-carousel h4, .news-carousel p, .team-carousel p {
+.news-carousel h4, .news-carousel p {
   margin: 0.5rem; }
-.news-carousel a, .team-carousel a {
+.news-carousel a {
   border: none;
   outline: none; }
-.news-carousel img, .team-carousel img {
+.news-carousel img {
   max-width: 100%;
   margin-bottom: 1.2rem; }
 
-.blog .team-carousel, .archive .team-carousel, .archive .team-carousel {
-  margin-bottom: 2.5rem; }
-.team-carousel .carousel-item {
-  padding: 2.5rem 2.5rem 0; }
-  .blog .team-carousel .carousel-item, .archive .team-carousel .carousel-item, .archive .team-carousel .carousel-item {
-    padding: 2.5rem 1.5rem 0; }
+.team-carousel {
+  text-align: center; }
+  .blog .team-carousel, .archive .team-carousel, .archive .team-carousel {
+    margin-bottom: 2.5rem; }
+  .team-carousel .carousel-item {
+    display: inline-block;
+    width: 33%;
+    vertical-align: top;
+    padding: 2rem;
+    text-align: left; }
+    .blog .team-carousel .carousel-item, .archive .team-carousel .carousel-item, .archive .team-carousel .carousel-item {
+      padding: 2.5rem 1.5rem 0; }
+    .team-carousel .carousel-item h4, .team-carousel .carousel-item p {
+      padding-left: 1rem;
+      padding-right: 1rem; }
 
 .releases h2 {
   text-align: center;
@@ -1841,9 +1850,6 @@ LARGER MOBILE DEVICES
     width: 180%;
     left: -30%; }
 
-  .team-carousel .carousel-item {
-    padding: 2.5rem 1.5rem 0; }
-
   /*********************
   NAVIGATION STYLES
   *********************/
@@ -1947,9 +1953,6 @@ TABLET & SMALLER LAPTOPS
       min-height: 28rem; }
     .page-technology .row.grad-alt [class*="col-"] {
       min-height: 21rem; }
-
-  .team-carousel .carousel-item {
-    padding: 2.5rem 3.5rem 0; }
 
   .cat-filter ul {
     display: inline-block;

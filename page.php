@@ -63,7 +63,9 @@
 										<div class="carousel-item">
 											<img src="<?php the_sub_field('photo'); ?>" alt="<?php the_sub_field('name'); ?>">
 											<h4><?php the_sub_field('name'); ?></h4>
-											<p><?php the_sub_field('position'); ?></p>
+											<p class="position"><?php the_sub_field('position'); ?></p>
+											<a href="#" class="read-bio">Read Bio</a>
+											<p class="bio"><?php the_sub_field('bio'); ?></p>
 										</div>
 									<?php endwhile; ?>
 									</div>

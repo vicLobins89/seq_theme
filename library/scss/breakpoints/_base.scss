@@ -241,6 +241,12 @@ hr {
 			max-width: 100px;
 		}
 	}
+	
+	ul {
+		font-size: 1.2rem;
+		list-style: disc;
+    	padding-left: 1.3rem;
+	}
 }
 
 .grad {
@@ -556,6 +562,15 @@ h3, .h3 {
 	margin: 0 0 1rem;
 	text-transform: uppercase;
 	letter-spacing: 0.2rem;
+	
+	a {
+		border-bottom: 2px dotted $link-color;
+		@include transition(all 0.2s ease-in-out);
+		
+		&:hover, &:focus {
+			border-bottom-color: $link-hover;
+		}
+	}
 }
 
 h4, .h4 {

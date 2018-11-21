@@ -1076,6 +1076,10 @@ hr {
       transform-origin: top;
       margin: 0 0.5rem 1rem 0;
       max-width: 100px; }
+  .row ul {
+    font-size: 1.2rem;
+    list-style: disc;
+    padding-left: 1.3rem; }
 
 .grad {
   background: #47b074;
@@ -1273,6 +1277,12 @@ h3, .h3 {
   margin: 0 0 1rem;
   text-transform: uppercase;
   letter-spacing: 0.2rem; }
+  h3 a, .h3 a {
+    border-bottom: 2px dotted #000;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; }
+    h3 a:hover, h3 a:focus, .h3 a:hover, .h3 a:focus {
+      border-bottom-color: #8b8b8a; }
 
 h4, .h4 {
   font-size: 1.3rem;

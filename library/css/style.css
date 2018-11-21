@@ -1174,7 +1174,8 @@ hr {
       position: relative;
       margin-bottom: 10px; }
       .team-carousel .carousel-item .read-bio.active:after {
-        transform: rotate(0deg); }
+        transform: rotate(0deg);
+        top: 3px; }
       .team-carousel .carousel-item .read-bio:after {
         content: '^';
         position: absolute;

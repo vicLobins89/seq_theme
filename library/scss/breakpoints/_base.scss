@@ -391,6 +391,7 @@ hr {
 			
 			&.active:after {
 				transform: rotate(0deg);
+				top: 3px;
 			}
 			
 			&:after {

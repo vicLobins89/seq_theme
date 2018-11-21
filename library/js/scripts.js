@@ -73,7 +73,8 @@ jQuery(document).ready(function($) {
 		]
 	});
 	
-	$('.read-bio').on('click', function(){
+	$('.read-bio').on('click', function(e){
+		e.preventDefault();
 		$(this).next().toggleClass('active');
 	});
 	

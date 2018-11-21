@@ -73,7 +73,7 @@ jQuery(document).ready(function($) {
 		]
 	});
 	
-	$('.team-carousel').slick({
+	/*$('.team-carousel').slick({
 		slidesToShow: 3,
 		slidesToScroll: 1,
 		autoplay: true,
@@ -95,7 +95,7 @@ jQuery(document).ready(function($) {
 				}
 			}
 		]
-	});
+	});*/
 	
 	var headerHeight = $('.header').outerHeight();
 	$(window).on('scroll', function(){

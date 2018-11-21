@@ -1156,14 +1156,20 @@ hr {
       padding-right: 1rem; }
     .team-carousel .carousel-item img {
       max-width: 100%;
-      height: auto; }
+      height: auto;
+      margin-bottom: 8px; }
     .team-carousel .carousel-item .bio {
       overflow: hidden;
       max-height: 0px;
+      line-height: 1.25;
       -webkit-transition: max-height 0.3s ease-in-out;
       transition: max-height 0.3s ease-in-out; }
       .team-carousel .carousel-item .bio.active {
         max-height: 600px; }
+    .team-carousel .carousel-item .position {
+      margin: 0 0 8px; }
+    .team-carousel .carousel-item .read-bio {
+      color: #0b6b4e; }
 
 .releases h2 {
   text-align: center;

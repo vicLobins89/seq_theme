@@ -365,16 +365,26 @@ hr {
 		img {
 			max-width: 100%;
 			height: auto;
+			margin-bottom: 8px;
 		}
 		
 		.bio {
 			overflow: hidden;
 			max-height: 0px;
+			line-height: 1.25;
 			@include transition(max-height 0.3s ease-in-out);
 			
 			&.active {
 				max-height: 600px;
 			}
+		}
+		
+		.position {
+			margin: 0 0 8px;
+		}
+		
+		.read-bio {
+			color: $green;
 		}
 	}
 }

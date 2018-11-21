@@ -75,6 +75,7 @@ jQuery(document).ready(function($) {
 	
 	$('.read-bio').on('click', function(e){
 		e.preventDefault();
+		$(this).toggleClass('active');
 		$(this).next().toggleClass('active');
 	});
 	

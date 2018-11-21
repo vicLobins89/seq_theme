@@ -1169,7 +1169,10 @@ hr {
     .team-carousel .carousel-item .position {
       margin: 0 0 8px; }
     .team-carousel .carousel-item .read-bio {
-      color: #0b6b4e; }
+      color: #0b6b4e;
+      position: relative; }
+      .team-carousel .carousel-item .read-bio:after {
+        content: '^'; }
 
 .releases h2 {
   text-align: center;

@@ -385,6 +385,12 @@ hr {
 		
 		.read-bio {
 			color: $green;
+			position: relative;
+			
+			&:after {
+				content: '^';
+				
+			}
 		}
 	}
 }

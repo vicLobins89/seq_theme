@@ -1947,7 +1947,7 @@ TABLET & SMALLER LAPTOPS
   .featured-image .page-title, .featured-image .widget_text {
     width: 60%;
     height: 50%;
-    overflow: auto;
+    overflow: visible;
     margin: auto 0;
     top: 0;
     bottom: 0;

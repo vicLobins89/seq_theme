@@ -160,7 +160,7 @@ hr {
 .featured-image .page-title {
   width: 60%;
   height: 50%;
-  overflow: auto;
+  overflow: visible;
   margin: auto 0;
   top: 0;
   bottom: 0;

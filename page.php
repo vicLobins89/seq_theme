@@ -38,19 +38,15 @@
 								
 								
 								<?php // RELEASES ?>
-								<?php if( have_rows('releases') ): ?>
+								<?php if( have_rows('testimonials') ): ?>
 									<div class="releases wrap">
 										<h2><?php the_field('heading'); ?></h2>
 										<hr>
-									<?php while( have_rows('releases') ): the_row(); ?>
+									<?php while( have_rows('testimonials') ): the_row(); ?>
 										<div class="col-12 cf">
-											<div class="col-6">
-												<h4><?php the_sub_field('date'); ?></h4>
-												<p class="title"><?php the_sub_field('title'); ?></p>
-											</div>
-											<div class="col-6"><p><?php the_sub_field('details'); ?></p></div>
+											<p class="quote"><?php the_sub_field('details'); ?></p>
+											<p class="name"><?php the_sub_field('title'); ?></p>
 										</div>
-										<hr>
 									<?php endwhile; ?>
 									</div>
 								<?php endif; ?>

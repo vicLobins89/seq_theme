@@ -205,6 +205,11 @@ hr {
 .team-carousel .carousel-item {
   width: 33%; }
 
+.releases p {
+  font-size: 1.8em; }
+  .releases p.name {
+    font-size: 1.3em; }
+
 .cat-filter ul {
   display: inline-block;
   margin-left: 1.85rem; }

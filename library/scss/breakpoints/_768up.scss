@@ -112,6 +112,16 @@ hr {
 	}
 }
 
+.releases {
+	p {
+		font-size: 1.8em;
+		
+		&.name {
+			font-size: 1.3em;
+		}
+	}
+}
+
 .cat-filter {
 	ul {
 		display: inline-block;

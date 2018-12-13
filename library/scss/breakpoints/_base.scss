@@ -123,6 +123,10 @@ hr {
 		max-width: none;
 		left: -50%;
 		
+		.page-sequentra & {
+			left: -88%;
+		}
+		
 		.page-technology &,
 		.page-about-us &,
 		.page-request-a-demo &,
@@ -192,7 +196,6 @@ hr {
 	p {
 		strong, b {
 			font-weight: 400;
-			color: lighten($black, 20%);
 		}
 		
 		a:not(.green-btn) {

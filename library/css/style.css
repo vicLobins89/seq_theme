@@ -1011,6 +1011,8 @@ hr {
     height: auto;
     max-width: none;
     left: -50%; }
+    .page-sequentra .featured-image img {
+      left: -88%; }
     .page-technology .featured-image img, .page-about-us .featured-image img, .page-request-a-demo .featured-image img, .page-roadmap .featured-image img, .blog .featured-image img, .archive .featured-image img, .archive .featured-image img {
       width: 160%; }
     .page-contact-us .featured-image img {
@@ -1044,8 +1046,7 @@ hr {
   .page-contact-us .row h5 {
     font-size: 2rem; }
   .row p strong, .row p b {
-    font-weight: 400;
-    color: #333333; }
+    font-weight: 400; }
   .row p a:not(.green-btn):not(a.comment-reply-link):not(#submit) {
     color: #0b6b4e; }
   .row.grad-alt {

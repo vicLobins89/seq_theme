@@ -979,12 +979,14 @@ hr {
     height: 56%;
     width: 100%;
     text-align: center;
-    overflow: hidden;
+    overflow: visible;
     margin: auto 0;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0; }
+    .page-sequentra .featured-image .page-title, .page-sequentra .featured-image .widget_text {
+      height: 70%; }
     .featured-image .page-title h1, .featured-image .widget_text h1 {
       color: #fff;
       font-weight: 600;

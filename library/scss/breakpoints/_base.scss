@@ -73,12 +73,16 @@ hr {
 		height: 56%;
 		width: 100%;
 		text-align: center;
-		overflow: hidden;
+		overflow: visible;
 		margin: auto 0;
 		top: 0;
 		bottom: 0;
 		right: 0;
 		left: 0;
+		
+		.page-sequentra & {
+			height: 70%;
+		}
 		
 		h1 {
 			color: $white;

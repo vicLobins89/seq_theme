@@ -98,6 +98,8 @@ html {
 .featured-image img {
   width: 180%;
   left: -30%; }
+  .page-sequentra .featured-image img {
+    left: -60%; }
 
 .team-carousel .carousel-item {
   width: 49%; }
@@ -183,6 +185,8 @@ hr {
   width: 100% !important;
   height: auto;
   left: auto; }
+  .page-sequentra .featured-image img {
+    left: auto; }
 
 .row.wrap {
   margin: 0.75rem auto 1rem; }

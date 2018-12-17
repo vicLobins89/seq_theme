@@ -1442,6 +1442,8 @@ nav li {
   .nav li {
     list-style: none;
     border-bottom: 1px solid #0b6b4e; }
+    .nav li.menu-item-has-children {
+      border-bottom: none; }
     .nav li a {
       display: block;
       text-decoration: none;
@@ -1450,6 +1452,10 @@ nav li {
       this is for mobile ONLY, so there's no need
       to declare hover styles here
       */ }
+    .nav li ul.sub-menu,
+    .nav li ul.children {
+      margin: 0;
+      border-top: 1px solid #0b6b4e; }
 
 .socket-nav {
   margin: 0;
@@ -2097,6 +2103,7 @@ TABLET & SMALLER LAPTOPS
         margin: 0;
         width: 100%;
         padding: 1rem 0 0;
+        border-bottom: none;
         position: absolute;
         background: #fff;
         opacity: 0;

@@ -788,6 +788,10 @@ nav {
 	li {
 		list-style: none;
 		border-bottom: 1px solid $green;
+		
+		&.menu-item-has-children {
+			border-bottom: none;
+		}
 
 		a {
 			display: block;
@@ -809,6 +813,8 @@ nav {
 
 		ul.sub-menu,
 		ul.children {
+			margin: 0;
+    		border-top: 1px solid $green;
 
 			li {
 

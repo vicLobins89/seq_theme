@@ -214,7 +214,7 @@ NAVIGATION STYLES
     visibility: visible;
     padding: 0;
     position: relative;
-	overflow-y: hidden;
+	overflow: visible;
 }
 
 nav {
@@ -250,11 +250,15 @@ nav {
 
 		ul.sub-menu,
 		ul.children {
+			position: absolute;
+			background: $white;
+			opacity: 0;
+			visibility: hidden;
+			@include transition(all 0.2s ease-in-out);
 
 			li {
 
 				a {
-
 					&:hover,
 					&:focus {}
 
@@ -288,9 +292,12 @@ nav {
 		}
 
 		/* showing sub-menus */
-		&:hover > ul {
-			top: auto;
-			visibility:visible;
+		&:hover, &:focus {
+			ul.sub-menu,
+			ul.children {
+				opacity: 1;
+				visibility:visible;
+			}
 		}
 
 	} /* end .menu ul li */
@@ -306,9 +313,9 @@ nav {
 
 .socket-nav {
 	position: absolute;
-	right: 2rem;
+	right: -4px;
 	top: 0;
-	margin: 1.4rem 0;
+	margin: 0;
 	padding-right: 2.5rem;
 	
 	li {

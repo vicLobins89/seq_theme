@@ -1450,9 +1450,6 @@ nav li {
       this is for mobile ONLY, so there's no need
       to declare hover styles here
       */ }
-    .nav li ul.sub-menu li a,
-    .nav li ul.children li a {
-      padding-left: 30px; }
 
 .socket-nav {
   margin: 0;
@@ -2072,7 +2069,7 @@ TABLET & SMALLER LAPTOPS
     visibility: visible;
     padding: 0;
     position: relative;
-    overflow-y: hidden; }
+    overflow: visible; }
 
   nav li {
     text-align: left; }
@@ -2097,6 +2094,12 @@ TABLET & SMALLER LAPTOPS
           color: #8b8b8a; }
       .nav li ul.sub-menu,
       .nav li ul.children {
+        position: absolute;
+        background: #fff;
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
         /* highlight sub-menu current page */ }
         .nav li ul.sub-menu li,
         .nav li ul.children li {
@@ -2110,15 +2113,17 @@ TABLET & SMALLER LAPTOPS
           .nav li ul.children li ul {
             top: 0;
             left: 100%; }
-      .nav li:hover > ul {
-        top: auto;
+      .nav li:hover ul.sub-menu,
+      .nav li:hover ul.children, .nav li:focus ul.sub-menu,
+      .nav li:focus ul.children {
+        opacity: 1;
         visibility: visible; }
 
   .socket-nav {
     position: absolute;
-    right: 2rem;
+    right: -4px;
     top: 0;
-    margin: 1.4rem 0;
+    margin: 0;
     padding-right: 2.5rem; }
     .socket-nav li {
       display: inline-block;

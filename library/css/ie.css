@@ -271,7 +271,7 @@ NAVIGATION STYLES
   opacity: 1;
   visibility: visible;
   padding: 0;
-  position: relative;
+  position: static;
   overflow: visible; }
 
 nav li {

@@ -2094,6 +2094,9 @@ TABLET & SMALLER LAPTOPS
           color: #8b8b8a; }
       .nav li ul.sub-menu,
       .nav li ul.children {
+        margin: 0;
+        width: 100%;
+        padding: 1rem 0 0;
         position: absolute;
         background: #fff;
         opacity: 0;

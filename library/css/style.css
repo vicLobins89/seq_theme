@@ -2124,8 +2124,8 @@ TABLET & SMALLER LAPTOPS
 
   .socket-nav {
     position: absolute;
-    right: -4px;
-    top: 0;
+    right: 0;
+    top: 1.45rem;
     margin: 0;
     padding-right: 2.5rem; }
     .socket-nav li {
